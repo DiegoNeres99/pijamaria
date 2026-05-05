@@ -17,14 +17,14 @@ const benefits = [
   { icon: '✨', title: 'Modelos femininos', description: 'Designs delicados e elegantes que valorizam cada silhueta.' },
   { icon: '📦', title: 'Pronta entrega', description: 'Grande variedade disponível para pronta entrega ou sob consulta.' },
   { icon: '💬', title: 'Atendimento direto', description: 'Fale diretamente com a gente pelo WhatsApp ou Instagram.' },
-  { icon: '💝', title: 'Ótimo presente', description: 'Embalagem especial disponível. Presente perfeito para quem você ama.' },
+  { icon: '💝', title: 'Ótimo presente', description: 'Presente perfeito para quem você ama.' },
 ]
 
 const categoryItems = [
-  { label: 'Infantil', image: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80', href: '#catalogo' },
-  { label: 'Inverno', image: 'https://images.unsplash.com/photo-1608228088998-57828365d486?w=400&q=80', href: '#catalogo' },
-  { label: 'Verão', image: 'https://images.unsplash.com/photo-1512327428886-4fb46f7867f8?w=400&q=80', href: '#catalogo' },
-  { label: 'Conjuntos', image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&q=80', href: '#catalogo' },  
+  { label: 'Infantil', icon: '🧸', detail: 'Macia e delicada', href: '#catalogo' },
+  { label: 'Inverno', icon: '❄️', detail: 'Quentinhos e elegantes', href: '#catalogo' },
+  { label: 'Verão', icon: '☀️', detail: 'Leves e fresquinhos', href: '#catalogo' },
+  { label: 'Conjuntos', icon: '💗', detail: 'Peças que combinam', href: '#catalogo' },
 ]
 
 export default function App() {
@@ -84,36 +84,32 @@ export default function App() {
 
       {/* === CATEGORIAS === */}
       <RevealSection>
-      <section className="w-full py-16 bg-white">
-        <div className="w-full px-4 sm:px-8 lg:px-16">
+      <section className="w-full py-16 sm:py-20 bg-white">
+        <div className="w-full px-4 sm:px-8 lg:px-16 min-h-[60vh] flex items-center justify-center">
+          <div className="w-full max-w-5xl">
           <div className="text-center mb-10">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-800 mb-2">
               Nossas Categorias
             </h2>
             <p className="text-stone-500 text-sm">Explore tudo que temos para você</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {categoryItems.map((cat) => (
               <a
                 key={cat.label}
                 href={cat.href}
-                className="group relative overflow-hidden rounded-3xl aspect-[3/4] block shadow-sm hover:shadow-xl transition-all duration-300"
+                className="group rounded-3xl border border-rose-100 bg-gradient-to-br from-rose-50 via-white to-stone-50 px-4 py-8 sm:px-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
               >
-                {/* Imagem de fundo */}
-                <img
-                  src={cat.image}
-                  alt={cat.label}
-                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-                {/* Overlay rose gradiente */}
-                <div className="absolute inset-0 bg-gradient-to-t from-rose-900/70 via-rose-600/20 to-transparent" />
-                {/* Label */}
-                <span className="absolute bottom-3 left-0 right-0 text-center font-serif text-white text-sm font-semibold tracking-wider drop-shadow-md">
+                <span className="text-3xl sm:text-4xl block mb-3">{cat.icon}</span>
+                <span className="block font-serif text-stone-800 text-lg sm:text-xl font-semibold">
                   {cat.label}
+                </span>
+                <span className="block mt-2 text-xs sm:text-sm text-stone-500">
+                  {cat.detail}
                 </span>
               </a>
             ))}
+          </div>
           </div>
         </div>
       </section>

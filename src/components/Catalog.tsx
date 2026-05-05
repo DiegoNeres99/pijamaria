@@ -1,38 +1,73 @@
 import { useRef } from 'react'
 import { products, catalogSections } from '../data/products'
-import type { CatalogSection, CatalogBanner } from '../data/products'
+import type { CatalogSection } from '../data/products'
 import ProductCard from './ProductCard'
 
-// ── Banner promocional full-width entre seções ─────────────
-function PromoBanner({ b, subtitle }: { b: CatalogBanner; subtitle?: string }) {
-  return (
-    <div className={`w-full rounded-2xl overflow-hidden mb-10 ${b.bg}`}>
-      <div className="flex items-center justify-between px-10 sm:px-16 py-9 sm:py-11 gap-6">
+// paleta por categoria
+const sectionTheme: Record<string, {
+  ghost: string
+  pill: string
+  pillText: string
+  line: string
+  dot: string
+}> = {
+  Inverno: {
+    ghost: 'text-violet-100',
+    pill: 'bg-violet-50 text-violet-500 ring-1 ring-violet-200',
+    pillText: 'Coleção',
+    line: 'from-violet-200 via-rose-200 to-transparent',
+    dot: 'bg-violet-300',
+  },
+  Verão: {
+    ghost: 'text-amber-100',
+    pill: 'bg-amber-50 text-amber-600 ring-1 ring-amber-200',
+    pillText: 'Novidades',
+    line: 'from-amber-200 via-rose-200 to-transparent',
+    dot: 'bg-amber-400',
+  },
+  Feminino: {
+    ghost: 'text-rose-100',
+    pill: 'bg-rose-50 text-rose-400 ring-1 ring-rose-200',
+    pillText: 'Sempre em alta',
+    line: 'from-rose-200 via-pink-200 to-transparent',
+    dot: 'bg-rose-300',
+  },
+}
 
-        {/* Texto */}
-        <div className="flex flex-col gap-1">
-          <span className={`text-[10px] uppercase tracking-[0.25em] font-medium opacity-60 ${b.textColor}`}>
-            {b.tag}
+// ── Cabeçalho editorial de cada seção ──────────────────────
+function SectionHeader({ section }: { section: CatalogSection }) {
+  const t = sectionTheme[section.category] ?? sectionTheme['Feminino']
+
+  return (
+    <div className="relative mb-10 mt-2 overflow-hidden">
+      {/* Texto fantasma decorativo */}
+      <span
+        aria-hidden
+        className={`absolute -top-3 left-0 text-[clamp(4.5rem,14vw,9rem)] font-black uppercase leading-none
+          select-none pointer-events-none ${t.ghost} opacity-80 tracking-tight`}
+      >
+        {section.category}
+      </span>
+
+      {/* Conteúdo principal */}
+      <div className="relative z-10 flex flex-col sm:flex-row sm:items-end gap-3 sm:gap-6 pt-6 pb-1">
+        <div className="flex flex-col gap-2">
+          <span className={`self-start text-[10px] uppercase tracking-[0.22em] font-bold px-3 py-1 rounded-full ${t.pill}`}>
+            {t.pillText}
           </span>
-          <div className="flex items-baseline gap-2.5 flex-wrap">
-            <span className={`font-sans text-2xl sm:text-3xl font-light ${b.textColor}`}>{b.title}</span>
-            <span className={`font-serif text-4xl sm:text-5xl font-bold italic leading-none ${b.accentColor}`}>
-              {b.highlight}
-            </span>
-          </div>
-          {subtitle && (
-            <p className={`text-xs sm:text-sm mt-1 opacity-50 font-light ${b.textColor}`}>{subtitle}</p>
+          <h3 className="font-serif font-bold text-stone-800 text-3xl sm:text-4xl leading-tight">
+            {section.title}
+          </h3>
+          {section.subtitle && (
+            <p className="text-stone-400 text-sm font-light">{section.subtitle}</p>
           )}
         </div>
 
-        {/* CTA */}
-        <a
-          href={b.ctaHref}
-          className={`flex-shrink-0 px-7 py-3 rounded-full font-semibold text-sm transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95 ${b.btnClass}`}
-        >
-          {b.cta}
-        </a>
-
+        {/* Linha decorativa */}
+        <div className="flex-1 flex items-center gap-2 pb-1 hidden sm:flex">
+          <div className={`h-px flex-1 bg-gradient-to-r ${t.line}`} />
+          <span className={`w-1.5 h-1.5 rounded-full ${t.dot} opacity-60`} />
+        </div>
       </div>
     </div>
   )
@@ -53,24 +88,7 @@ function CategoryCarousel({ section }: { section: CatalogSection }) {
 
   return (
     <div className="mb-4">
-      {/* Banner antes da seção */}
-      {section.banner && <PromoBanner b={section.banner} subtitle={section.subtitle} />}
-
-      {/* Título da seção */}
-      <div className="text-center mb-8">
-        <h3 className="font-serif font-bold text-stone-800 text-xl sm:text-2xl tracking-wider uppercase">
-          {section.title}
-        </h3>
-        {/* Linha decorativa com gradiente */}
-        <div className="flex items-center justify-center gap-2 mt-2 mb-1">
-          <div className="h-px w-10 bg-gradient-to-r from-transparent to-rose-400" />
-          <span className="text-rose-300 text-xs">✦</span>
-          <div className="h-px w-10 bg-gradient-to-l from-transparent to-rose-400" />
-        </div>
-        {section.subtitle && (
-          <p className="text-stone-400 text-sm mt-1 italic">{section.subtitle}</p>
-        )}
-      </div>
+      <SectionHeader section={section} />
 
       {/* Carrossel */}
       <div className="relative group/carousel">
@@ -110,7 +128,11 @@ function CategoryCarousel({ section }: { section: CatalogSection }) {
       <p className="text-center text-stone-400 text-xs mt-3 sm:hidden">← Deslize para ver mais →</p>
 
       {/* Divisor entre seções */}
-      <div className="border-b border-stone-100 mt-14 mb-14" />
+      <div className="flex items-center gap-4 mt-16 mb-16">
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent to-stone-200" />
+        <span className="text-stone-300 text-[10px] tracking-[0.3em] uppercase font-medium">✦</span>
+        <div className="flex-1 h-px bg-gradient-to-l from-transparent to-stone-200" />
+      </div>
     </div>
   )
 }
@@ -121,16 +143,28 @@ export default function Catalog() {
       <div className="w-full px-6 sm:px-10 lg:px-20">
 
         {/* Título principal */}
-        <div className="text-center mb-14">
-          <span className="text-rose-300 text-xs tracking-widest uppercase font-medium">
-            — Nossos produtos —
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-800 mt-2 mb-4">
-            Catálogo
-          </h2>
-          <p className="text-stone-500 max-w-xl mx-auto text-base sm:text-lg">
-            Cada peça pensada para te deixar confortável, delicada e aconchegante em qualquer momento.
-          </p>
+        <div className="relative text-center mb-20 overflow-hidden">
+          {/* Blob decorativo de fundo */}
+          <div
+            aria-hidden
+            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          >
+            <div className="w-[32rem] h-40 rounded-full bg-rose-50 blur-3xl opacity-70" />
+          </div>
+
+          <div className="relative z-10">
+            <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-rose-400 mb-3">
+              <span className="w-6 h-px bg-rose-300" />
+              Nossos Produtos
+              <span className="w-6 h-px bg-rose-300" />
+            </span>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-stone-800 leading-tight">
+              Catálogo
+            </h2>
+            <p className="text-stone-400 max-w-lg mx-auto text-base mt-4 leading-relaxed">
+              Cada peça pensada para te deixar confortável, delicada e aconchegante em qualquer momento.
+            </p>
+          </div>
         </div>
 
         {catalogSections.map((section) => (
