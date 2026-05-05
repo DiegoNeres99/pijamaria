@@ -1,13 +1,7 @@
-// ============================================================
-// App.tsx - Componente raiz da Use Pijamaria
-// Monta todas as seções da landing page
-// ============================================================
-
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Catalog from './components/Catalog'
 import Gallery from './components/Gallery'
-import SizeGuide from './components/SizeGuide'
 import HowToBuy from './components/HowToBuy'
 import Footer from './components/Footer'
 import FloatingWhatsapp from './components/FloatingWhatsapp'
@@ -27,12 +21,10 @@ const benefits = [
 ]
 
 const categoryItems = [
-  { label: 'Feminino', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80', href: '#catalogo' },
   { label: 'Infantil', image: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80', href: '#catalogo' },
   { label: 'Inverno', image: 'https://images.unsplash.com/photo-1608228088998-57828365d486?w=400&q=80', href: '#catalogo' },
   { label: 'Verão', image: 'https://images.unsplash.com/photo-1512327428886-4fb46f7867f8?w=400&q=80', href: '#catalogo' },
-  { label: 'Conjuntos', image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&q=80', href: '#catalogo' },
-  { label: 'Camisolas', image: 'https://images.unsplash.com/photo-1631194758628-71ec7c35137e?w=400&q=80', href: '#catalogo' },
+  { label: 'Conjuntos', image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&q=80', href: '#catalogo' },  
 ]
 
 export default function App() {
@@ -161,10 +153,7 @@ export default function App() {
           </div>
         </div>
       </section>
-      </RevealSection>
-
-      {/* === TAMANHOS === */}
-      <RevealSection><SizeGuide /></RevealSection>
+      </RevealSection>    
 
       {/* === COMO COMPRAR === */}
       <RevealSection><HowToBuy /></RevealSection>

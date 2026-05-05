@@ -1,8 +1,3 @@
-// ============================================================
-// Gallery - Galeria de fotos em grid
-// Substitua as imagens em src/data/products.ts > galleryImages
-// ============================================================
-
 import { useState } from 'react'
 import { galleryImages } from '../data/products'
 

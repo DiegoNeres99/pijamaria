@@ -10,8 +10,7 @@ const INSTAGRAM_URL = 'https://www.instagram.com/usepijamaria_'
 const navLinks = [
   { label: 'Início', href: '#inicio' },
   { label: 'Catálogo', href: '#catalogo' },
-  { label: 'Galeria', href: '#galeria' },
-  { label: 'Tamanhos', href: '#tamanhos' },
+  { label: 'Galeria', href: '#galeria' },  
   { label: 'Como Comprar', href: '#como-comprar' },
   { label: 'Sobre', href: '#sobre' },
 ]

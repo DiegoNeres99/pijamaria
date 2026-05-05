@@ -1,7 +1,3 @@
-// ============================================================
-// Catalog - Banners promocionais + seções tituladas com carrossel
-// ============================================================
-
 import { useRef } from 'react'
 import { products, catalogSections } from '../data/products'
 import type { CatalogSection, CatalogBanner } from '../data/products'
