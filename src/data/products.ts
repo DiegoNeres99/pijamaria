@@ -30,7 +30,7 @@ export const products: Product[] = [
     sizes: ['M','G'],
     description: 'Estampa xadrez clássica com detalhes em pink. Muito aconchegante para o frio.',
     category: 'Inverno',
-    image: 'src/galerias/inverno/longo1_G.JPG',
+    image: '/galerias/inverno/longo1_G.JPG',
   },
   {
     id: 2,
@@ -45,7 +45,7 @@ export const products: Product[] = [
     sizes: ['M','G'],
     description: 'Abertura com botões, estampa animal print moderna. Conjunto calça e blusa.',
     category: 'Inverno',
-    image: 'src/galerias/inverno/longo2_G.JPG',
+    image: '/galerias/inverno/longo2_G.JPG',
   },
   {
     id: 3,
@@ -60,7 +60,7 @@ export const products: Product[] = [
     sizes: ['M','G'],
     description: 'Flanela macia com listras delicadas. Ideal para noites bem frias.',
     category: 'Inverno',
-    image: 'src/galerias/inverno/longo3_G.JPG',
+    image: '/galerias/inverno/longo3_G.JPG',
   },
   {
     id: 4,
@@ -75,7 +75,7 @@ export const products: Product[] = [
     sizes: ['M','G'],
     description: 'Calça oncinha com blusa preta estampada. O clássico que nunca sai de moda.',
     category: 'Inverno',
-    image: 'src/galerias/inverno/longo4_G.JPG',
+    image: '/galerias/inverno/longo4_G.JPG',
   },
    {
     id: 5,
@@ -90,7 +90,7 @@ export const products: Product[] = [
     sizes: ['M'],
     description: 'Calça oncinha com blusa preta estampada. O clássico que nunca sai de moda.',
     category: 'Inverno',
-    image: 'src/galerias/inverno/longo5_M.JPG',
+    image: '/galerias/inverno/longo5_M.JPG',
   },
   
   // ── VERÃO ────────────────────────────────────────────────
@@ -107,7 +107,7 @@ export const products: Product[] = [
     sizes: ['G'],
     description: 'Shortinho e camiseta florida, super fresquinha para noites quentes.',
     category: 'Verão',
-    image: 'src/galerias/verao/curto1_G.JPG',
+    image: '/galerias/verao/curto1_G.JPG',
   },
   {
     id: 8,
@@ -122,7 +122,7 @@ export const products: Product[] = [
     sizes: ['G'],
     description: 'Baby doll com detalhe de laço. Leve, delicado e feminino.',
     category: 'Verão',
-    image: 'src/galerias/verao/curto2_G.JPG',
+    image: '/galerias/verao/curto2_G.JPG',
   },
   {
     id: 9,
@@ -137,7 +137,7 @@ export const products: Product[] = [
     sizes: ['M','G'],
     description: 'Shortão estampado com blusa básica. Conforto máximo para o verão.',
     category: 'Verão',
-    image: 'src/galerias/verao/curto3_G.JPG',
+    image: '/galerias/verao/curto3_G.JPG',
   },
   {
     id: 10,
@@ -152,7 +152,7 @@ export const products: Product[] = [
     sizes: ['M','G'],
     description: 'Regata alça fina com short básico. A dupla perfeita para o calor.',
     category: 'Verão',
-    image: 'src/galerias/verao/curto4_G.JPG',
+    image: '/galerias/verao/curto4_G.JPG',
   },
   {
     id: 11,
@@ -167,7 +167,7 @@ export const products: Product[] = [
     sizes: ['G'],
     description: 'Tecido viscose premium, lisinho e muito macio na pele.',
     category: 'Verão',
-    image: 'src/galerias/verao/curto5_G.JPG',
+    image: '/galerias/verao/curto5_G.JPG',
   },
   // ── TAMANHOS UNICO ─────────────────────────────────────────────
   {
@@ -183,7 +183,7 @@ export const products: Product[] = [
     sizes: ['Tamanho Único', '38 a 44'],
     description: 'Animal print moderno com tecido leve e macio. Estilo e conforto para qualquer estação.',
     category: 'Feminino',
-    image: 'src/galerias/tamanho_unico/tamanho_unico1.JPG',
+    image: '/galerias/tamanho_unico/tamanho_unico1.JPG',
   },
   {
     id: 13,
@@ -198,7 +198,7 @@ export const products: Product[] = [
     sizes: ['Tamanho Único','38 a 44'],
     description: 'Conjunto leve e confortável para noites tranquilas. Estampa floral delicada.',
     category: 'Feminino',
-    image: 'src/galerias/tamanho_unico/tamanho_unico2.JPG',
+    image: '/galerias/tamanho_unico/tamanho_unico2.JPG',
   },
   {
     id: 14,
@@ -213,7 +213,7 @@ export const products: Product[] = [
     sizes: ['Tamanho Único','38 a 44'],
     description: 'Camisola com detalhes em renda. Peça leve, feminina e sofisticada.',
     category: 'Feminino',
-    image: 'src/galerias/tamanho_unico/tamanho_unico3.jpg',
+    image: '/galerias/tamanho_unico/tamanho_unico3.jpg',
   },
   {
     id: 15,
@@ -228,7 +228,7 @@ export const products: Product[] = [
     sizes: ['Tamanho Único','38 a 44'],
     description: 'Conjunto rosê com calça e blusa combinando. Delicado e elegante.',
     category: 'Feminino',
-    image: 'src/galerias/tamanho_unico/tamanho_unico4.jpg',
+    image: '/galerias/tamanho_unico/tamanho_unico4.jpg',
   },
   
 ]
@@ -320,20 +320,20 @@ export const catalogSections: CatalogSection[] = [
 // ============================================================
 export const galleryImages: string[] = [
   // Inverno
-  'src/galerias/inverno/longo1_G.JPG',
-  'src/galerias/inverno/longo2_G.JPG',
-  'src/galerias/inverno/longo3_G.JPG',
-  'src/galerias/inverno/longo4_G.JPG',
-  'src/galerias/inverno/longo5_M.JPG',
+  '/galerias/inverno/longo1_G.JPG',
+  '/galerias/inverno/longo2_G.JPG',
+  '/galerias/inverno/longo3_G.JPG',
+  '/galerias/inverno/longo4_G.JPG',
+  '/galerias/inverno/longo5_M.JPG',
   // Verão
-  'src/galerias/verao/curto1_G.JPG',
-  'src/galerias/verao/curto2_G.JPG',
-  'src/galerias/verao/curto3_G.JPG',
-  'src/galerias/verao/curto4_G.JPG',
-  'src/galerias/verao/curto5_G.JPG',
+  '/galerias/verao/curto1_G.JPG',
+  '/galerias/verao/curto2_G.JPG',
+  '/galerias/verao/curto3_G.JPG',
+  '/galerias/verao/curto4_G.JPG',
+  '/galerias/verao/curto5_G.JPG',
   // Feminino / Tamanho Único
-  'src/galerias/tamanho_unico/tamanho_unico1.JPG',
-  'src/galerias/tamanho_unico/tamanho_unico2.JPG',
-  'src/galerias/tamanho_unico/tamanho_unico3.jpg',
-  'src/galerias/tamanho_unico/tamanho_unico4.jpg',
+  '/galerias/tamanho_unico/tamanho_unico1.JPG',
+  '/galerias/tamanho_unico/tamanho_unico2.JPG',
+  '/galerias/tamanho_unico/tamanho_unico3.jpg',
+  '/galerias/tamanho_unico/tamanho_unico4.jpg',
 ]
