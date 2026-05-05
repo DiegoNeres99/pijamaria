@@ -4,39 +4,35 @@ import type { CatalogSection, CatalogBanner } from '../data/products'
 import ProductCard from './ProductCard'
 
 // ── Banner promocional full-width entre seções ─────────────
-function PromoBanner({ b }: { b: CatalogBanner }) {
+function PromoBanner({ b, subtitle }: { b: CatalogBanner; subtitle?: string }) {
   return (
     <div className={`w-full rounded-2xl overflow-hidden mb-10 ${b.bg}`}>
-      <div className="flex flex-col sm:flex-row items-center justify-between px-8 sm:px-14 py-10 sm:py-12 gap-6">
+      <div className="flex items-center justify-between px-10 sm:px-16 py-9 sm:py-11 gap-6">
+
         {/* Texto */}
-        <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-          <span className={`text-xs uppercase tracking-widest font-medium mb-1 opacity-80 ${b.textColor}`}>
+        <div className="flex flex-col gap-1">
+          <span className={`text-[10px] uppercase tracking-[0.25em] font-medium opacity-60 ${b.textColor}`}>
             {b.tag}
           </span>
-          <div className="flex items-baseline gap-3 flex-wrap justify-center sm:justify-start">
-            <span className={`font-sans text-3xl sm:text-4xl font-light ${b.textColor}`}>{b.title}</span>
-            <span className={`font-serif text-5xl sm:text-7xl font-bold italic leading-none ${b.accentColor}`}>
+          <div className="flex items-baseline gap-2.5 flex-wrap">
+            <span className={`font-sans text-2xl sm:text-3xl font-light ${b.textColor}`}>{b.title}</span>
+            <span className={`font-serif text-4xl sm:text-5xl font-bold italic leading-none ${b.accentColor}`}>
               {b.highlight}
             </span>
           </div>
-          <p className={`text-sm mt-2 opacity-70 ${b.textColor}`}>estilo e conforto</p>
-        </div>
-
-        {/* Decoração central */}
-        <div className="hidden sm:flex flex-col items-center opacity-20">
-          <div className="w-px h-24 bg-white" />
-          <span className="text-white text-4xl mt-2">✦</span>
+          {subtitle && (
+            <p className={`text-xs sm:text-sm mt-1 opacity-50 font-light ${b.textColor}`}>{subtitle}</p>
+          )}
         </div>
 
         {/* CTA */}
-        <div className="flex flex-col items-center gap-3">
-          <a
-            href={b.ctaHref}
-            className={`px-8 py-3 rounded-full font-semibold text-sm transition-all shadow-md ${b.btnClass}`}
-          >
-            {b.cta}
-          </a>
-        </div>
+        <a
+          href={b.ctaHref}
+          className={`flex-shrink-0 px-7 py-3 rounded-full font-semibold text-sm transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95 ${b.btnClass}`}
+        >
+          {b.cta}
+        </a>
+
       </div>
     </div>
   )
@@ -58,7 +54,7 @@ function CategoryCarousel({ section }: { section: CatalogSection }) {
   return (
     <div className="mb-4">
       {/* Banner antes da seção */}
-      {section.banner && <PromoBanner b={section.banner} />}
+      {section.banner && <PromoBanner b={section.banner} subtitle={section.subtitle} />}
 
       {/* Título da seção */}
       <div className="text-center mb-8">
