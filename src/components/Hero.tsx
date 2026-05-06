@@ -1,10 +1,4 @@
-// ============================================================
-// Hero Section - Use Pijamaria
-// Troque HERO_IMAGE pela URL da imagem principal da marca
-// ============================================================
-
-// ⚙️ Imagem do hero — substitua pela foto principal da marca
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1631194758628-71ec7c35137e?w=1600&q=90'
+const HERO_IMAGE = 'public/galerias/logo/logo1.png' // Imagem de fundo do Hero, pode ser uma foto de pijamas ou um padrão delicado
 
 const WHATSAPP_NUMBER = '+554396927336' // mesmo número do Header
 

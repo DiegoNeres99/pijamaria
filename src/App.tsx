@@ -190,7 +190,7 @@ export default function App() {
                   Cada peça é cuidadosamente selecionada para garantir tecidos de qualidade, modelagens confortáveis e designs que você vai amar usar do anoitecer ao amanhecer.
                 </p>
                 <p>
-                  Do feminino ao infantil, do verão ao inverno — temos a peça certa para cada momento e cada pessoa.
+                  Do verão ao inverno — temos a peça certa para cada momento e cada pessoa.
                 </p>
               </div>
 

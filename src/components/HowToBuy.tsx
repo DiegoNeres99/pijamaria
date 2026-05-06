@@ -12,20 +12,20 @@ const steps = [
     title: 'Escolha o modelo',
     description: 'Navegue pelo catálogo acima e encontre o pijama perfeito para você.',
   },
+  // {
+  //   number: '02',
+  //   icon: '📏',
+  //   title: 'Confira o tamanho',
+  //   description: 'Use a tabela de tamanhos para encontrar o seu número ideal.',
+  // },
   {
     number: '02',
-    icon: '📏',
-    title: 'Confira o tamanho',
-    description: 'Use a tabela de tamanhos para encontrar o seu número ideal.',
-  },
-  {
-    number: '03',
     icon: '💬',
     title: 'Chame no WhatsApp',
     description: 'Entre em contato informando o modelo e tamanho desejado.',
   },
   {
-    number: '04',
+    number: '03',
     icon: '✅',
     title: 'Finalize com a gente',
     description: 'Combinamos entrega, forma de pagamento e você recebe seu pijama.',

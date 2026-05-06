@@ -152,7 +152,7 @@ export default function Footer() {
                 <div>
                   <p className="text-[10px] text-stone-600 uppercase tracking-wider">WhatsApp</p>
                   {/* ⚙️ Exibição do número formatado */}
-                  <p className="text-sm">(11) 99999-9999</p>
+                  <p className="text-sm">(43) 96927-336</p>
                 </div>
               </a>
               <a
