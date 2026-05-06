@@ -4,6 +4,7 @@
 // ⚙️ Troque WHATSAPP_NUMBER pelo número real
 // ============================================================
 
+import { useState } from 'react'
 import type { Product } from '../data/products'
 
 const WHATSAPP_NUMBER = '5511999999999' // ⚙️ Número real aqui
@@ -48,6 +49,18 @@ function Stars({ rating }: { rating: number }) {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const photos = product.images && product.images.length > 0 ? product.images : [product.image]
+  const [current, setCurrent] = useState(0)
+
+  const prev = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setCurrent((i) => (i - 1 + photos.length) % photos.length)
+  }
+  const next = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setCurrent((i) => (i + 1) % photos.length)
+  }
+
   const message = encodeURIComponent(
     `Olá! Tenho interesse em comprar o *${product.name}*.\n\n` +
     `💰 Preço: ${product.price}${product.pixLabel ? ' ' + product.pixLabel : ''}\n` +
@@ -60,11 +73,11 @@ export default function ProductCard({ product }: ProductCardProps) {
     <div className="group relative rounded-2xl p-px shadow-sm hover:shadow-xl transition-all duration-300 bg-stone-100 hover:bg-gradient-to-br hover:from-rose-200 hover:via-rose-100 hover:to-amber-100">
       <div className="bg-white rounded-[14px] overflow-hidden flex flex-col h-full">
 
-      {/* Imagem */}
+      {/* Imagem / Carrossel */}
       <div className="relative overflow-hidden aspect-[3/4]">
         <img
-          src={product.image}
-          alt={product.name}
+          src={photos[current]}
+          alt={`${product.name} - foto ${current + 1}`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
@@ -74,6 +87,38 @@ export default function ProductCard({ product }: ProductCardProps) {
           <span className="absolute top-3 right-3 text-white text-xs font-bold px-2.5 py-1 rounded-md shadow-md" style={{ background: '#c6973f' }}>
             -{product.discount}%
           </span>
+        )}
+
+        {/* Setas do carrossel (só aparece se tiver múltiplas fotos) */}
+        {photos.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              aria-label="Foto anterior"
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-white/80 hover:bg-white text-stone-700 rounded-full shadow transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button
+              onClick={next}
+              aria-label="Próxima foto"
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-white/80 hover:bg-white text-stone-700 rounded-full shadow transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+
+            {/* Bolinhas indicadoras */}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {photos.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={(e) => { e.preventDefault(); setCurrent(i) }}
+                  aria-label={`Ver foto ${i + 1}`}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${i === current ? 'bg-white scale-125' : 'bg-white/50'}`}
+                />
+              ))}
+            </div>
+          </>
         )}
 
         {/* Botão WhatsApp flutuante na imagem (aparece no hover desktop) */}

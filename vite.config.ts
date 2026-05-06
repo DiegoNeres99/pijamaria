@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0', // permite acesso na rede local (celular, tablet, etc.)
-    port: 5173,
+    port: 5174,
     strictPort: true, // garante que vai usar exatamente essa porta
   },
 })

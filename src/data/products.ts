@@ -11,12 +11,15 @@ export interface Product {
   sizes: string[]
   description: string
   category: string
-  image: string
+  image: string           // foto principal
+  images?: string[]       // fotos extras (carrossel) — se informado, substitui 'image'
 }
 
 export const products: Product[] = [
 
   // ── INVERNO ─────────────────────────────────────────────
+  // Exemplo com múltiplas fotos (carrossel):
+  // images: ['/galerias/inverno/longo1_G.JPG', '/galerias/inverno/longo2_G.JPG', '/galerias/inverno/longo3_G.JPG'],
   {
     id: 1,
     name: 'Pijama Americano Longo Coraçãozinho',
@@ -31,6 +34,10 @@ export const products: Product[] = [
     description: 'Estampa xadrez clássica com detalhes em pink. Muito aconchegante para o frio.',
     category: 'Inverno',
     image: '/galerias/inverno/longo1_G.JPG',
+    images: ['/galerias/inverno/longo1_G.JPG',
+             '/galerias/inverno/longo1-1_G.JPG',
+             '/galerias/inverno/longo1-1-1_G.JPG'
+            ],
   },
   {
     id: 2,
@@ -46,6 +53,10 @@ export const products: Product[] = [
     description: 'Abertura com botões, estampa animal print moderna. Conjunto calça e blusa.',
     category: 'Inverno',
     image: '/galerias/inverno/longo2_G.JPG',
+    images: ['/galerias/inverno/longo2_G.JPG',
+             '/galerias/inverno/longo2-2_G.JPG',
+             '/galerias/inverno/longo2-2-2_G.JPG'
+            ],
   },
   {
     id: 3,
@@ -61,6 +72,10 @@ export const products: Product[] = [
     description: 'Flanela macia com listras delicadas. Ideal para noites bem frias.',
     category: 'Inverno',
     image: '/galerias/inverno/longo3_G.JPG',
+    images: ['/galerias/inverno/longo3_G.JPG',
+             '/galerias/inverno/longo3-3_G.JPG',
+             '/galerias/inverno/longo3-3-3_G.JPG'
+            ],
   },
   {
     id: 4,
@@ -76,6 +91,10 @@ export const products: Product[] = [
     description: 'Calça oncinha com blusa preta estampada. O clássico que nunca sai de moda.',
     category: 'Inverno',
     image: '/galerias/inverno/longo4_G.JPG',
+    images: ['/galerias/inverno/longo4_G.JPG',
+             '/galerias/inverno/longo4-4_G.JPG',
+             '/galerias/inverno/longo4-4-4_G.JPG'
+            ],
   },
    {
     id: 5,
