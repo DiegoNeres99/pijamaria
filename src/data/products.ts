@@ -216,7 +216,7 @@ export const products: Product[] = [
     installments: '2x de R$ 49,95 no cartão s/ juros',
     sizes: ['Tamanho Único','38 a 44'],
     description: 'Conjunto leve e confortável para noites tranquilas. Estampa floral delicada.',
-    category: 'Feminino',
+    category: 'Verão',
     image: '/galerias/tamanho_unico/tamanho_unico2.JPG',
   },
   {
@@ -231,7 +231,7 @@ export const products: Product[] = [
     installments: '2x de R$ 37,45 no cartão s/ juros',
     sizes: ['Tamanho Único','38 a 44'],
     description: 'Camisola com detalhes em renda. Peça leve, feminina e sofisticada.',
-    category: 'Feminino',
+    category: 'Verão',
     image: '/galerias/tamanho_unico/tamanho_unico3.jpg',
   },
   {
@@ -246,7 +246,7 @@ export const products: Product[] = [
     installments: '2x de R$ 37,45 no cartão s/ juros',
     sizes: ['Tamanho Único','38 a 44'],
     description: 'Conjunto rosê com calça e blusa combinando. Delicado e elegante.',
-    category: 'Feminino',
+    category: 'Verão',
     image: '/galerias/tamanho_unico/tamanho_unico4.jpg',
   },
   
@@ -256,7 +256,7 @@ export const products: Product[] = [
 // Categorias exibidas na seção de filtros
 // Adicione ou remova categorias conforme necessário
 // ============================================================
-export const categories = ['Todos', 'Inverno', 'Verão', 'Feminino']
+export const categories = ['Todos', 'Inverno', 'Verão']
 
 // ============================================================
 // Seções do catálogo — cada item vira uma seção com título
@@ -315,23 +315,8 @@ export const catalogSections: CatalogSection[] = [
       btnClass: 'bg-rose-400 hover:bg-rose-500 text-white',
     },
   },
-  {
-    title: 'Feminino',
-    subtitle: 'Delicadeza e conforto em cada peça',
-    category: 'Feminino',
-    banner: {
-      tag: 'sempre em alta',
-      title: 'Linha',
-      highlight: 'Feminina',
-      cta: 'Explorar',
-      ctaHref: '#catalogo',
-      bg: 'bg-gradient-to-r from-rose-300 via-pink-300 to-rose-200',
-      textColor: 'text-white',
-      accentColor: 'text-white',
-      btnClass: 'bg-white text-rose-500 hover:bg-rose-50',
-    },
-  },
 ]
+
 
 // ============================================================
 // Fotos da galeria
