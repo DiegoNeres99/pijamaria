@@ -4,7 +4,7 @@
 // ⚙️ Troque WHATSAPP_NUMBER pelo número real
 // ============================================================
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Product } from '../data/products'
 
 const WHATSAPP_NUMBER = '5511999999999' // ⚙️ Número real aqui
@@ -50,7 +50,38 @@ function Stars({ rating }: { rating: number }) {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const photos = product.images && product.images.length > 0 ? product.images : [product.image]
+  const cardRef = useRef<HTMLDivElement>(null)
   const [current, setCurrent] = useState(0)
+  const [shouldPreload, setShouldPreload] = useState(false)
+
+  useEffect(() => {
+    const el = cardRef.current
+    if (!el || photos.length <= 1) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldPreload(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '300px' }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [photos.length])
+
+  useEffect(() => {
+    if (!shouldPreload || photos.length <= 1) return
+
+    const nextIndex = (current + 1) % photos.length
+    const prevIndex = (current - 1 + photos.length) % photos.length
+    ;[photos[nextIndex], photos[prevIndex]].forEach((src) => {
+      const img = new Image()
+      img.src = src
+    })
+  }, [current, photos, shouldPreload])
 
   const prev = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -70,7 +101,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`
 
   return (
-    <div className="group relative rounded-2xl p-px shadow-sm hover:shadow-xl transition-all duration-300 bg-stone-100 hover:bg-gradient-to-br hover:from-rose-200 hover:via-rose-100 hover:to-amber-100">
+    <div ref={cardRef} className="group relative rounded-2xl p-px shadow-sm hover:shadow-xl transition-all duration-300 bg-stone-100 hover:bg-gradient-to-br hover:from-rose-200 hover:via-rose-100 hover:to-amber-100">
       <div className="bg-white rounded-[14px] overflow-hidden flex flex-col h-full">
 
       {/* Imagem / Carrossel */}
@@ -80,6 +111,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           alt={`${product.name} - foto ${current + 1}`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
+          decoding="async"
         />
 
         {/* Badge de desconto */}
@@ -93,16 +125,18 @@ export default function ProductCard({ product }: ProductCardProps) {
         {photos.length > 1 && (
           <>
             <button
+              type="button"
               onClick={prev}
               aria-label="Foto anterior"
-              className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-white/80 hover:bg-white text-stone-700 rounded-full shadow transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-7 sm:h-7 flex items-center justify-center bg-white/85 hover:bg-white active:bg-white text-stone-700 rounded-full shadow transition-opacity duration-200 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <button
+              type="button"
               onClick={next}
               aria-label="Próxima foto"
-              className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-white/80 hover:bg-white text-stone-700 rounded-full shadow transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-7 sm:h-7 flex items-center justify-center bg-white/85 hover:bg-white active:bg-white text-stone-700 rounded-full shadow transition-opacity duration-200 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus-visible:opacity-100"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
@@ -111,6 +145,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
               {photos.map((_, i) => (
                 <button
+                  type="button"
                   key={i}
                   onClick={(e) => { e.preventDefault(); setCurrent(i) }}
                   aria-label={`Ver foto ${i + 1}`}
