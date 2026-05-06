@@ -164,7 +164,7 @@ export default function App() {
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
                 {/* ⚙️ Substitua pela foto real da marca */}
                 <img
-                  src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80"
+                  src="/galerias/logo/logo.png"
                   alt="Use Pijamaria - Nossa história"
                   className="w-full h-full object-cover"
                 />
