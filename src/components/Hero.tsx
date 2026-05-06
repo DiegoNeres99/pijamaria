@@ -1,4 +1,4 @@
-const HERO_IMAGE = 'public/galerias/logo/logo1.png' // Imagem de fundo do Hero, pode ser uma foto de pijamas ou um padrão delicado
+const HERO_IMAGE = '/galerias/logo/logo1.png' // Imagem de fundo do Hero, pode ser uma foto de pijamas ou um padrão delicado
 
 const WHATSAPP_NUMBER = '+554396927336' // mesmo número do Header
 
