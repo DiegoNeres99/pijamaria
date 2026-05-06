@@ -4,7 +4,7 @@
 // ============================================================
 
 // ⚙️ Número de WhatsApp real
-const WHATSAPP_NUMBER = '5511999999999'
+const WHATSAPP_NUMBER = '+554396927336'
 
 export default function FloatingWhatsapp() {
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá!%20Vi%20o%20catálogo%20da%20Use%20Pijamaria%20e%20gostaria%20de%20saber%20mais.`

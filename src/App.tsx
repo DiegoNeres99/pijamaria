@@ -8,7 +8,7 @@ import FloatingWhatsapp from './components/FloatingWhatsapp'
 import RevealSection from './components/RevealSection'
 
 // ⚙️ Número e Instagram para seções internas — altere também nos componentes individuais
-const WHATSAPP_NUMBER = '5511999999999'
+const WHATSAPP_NUMBER = '+55 43 9692-7336'
 const INSTAGRAM_URL = 'https://www.instagram.com/usepijamaria_'
 
 const benefits = [
@@ -180,7 +180,7 @@ export default function App() {
                 — Nossa história —
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-800 mt-2 mb-6">
-                Sobre a Use Pijamaria
+                Sobre a Use Pijamaria 💗
               </h2>
               <div className="space-y-4 text-stone-600 leading-relaxed">
                 <p>

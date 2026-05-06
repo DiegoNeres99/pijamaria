@@ -7,7 +7,7 @@
 import { useState, useEffect } from 'react'
 
 // ⚙️ Configuração de contato — altere aqui
-const WHATSAPP_NUMBER = '5511999999999' // Formato: 55 + DDD + número
+const WHATSAPP_NUMBER = '+554396927336' // Formato: 55 + DDD + número
 const INSTAGRAM_URL = 'https://www.instagram.com/usepijamaria_'
 
 const navLinks = [

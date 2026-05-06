@@ -3,7 +3,7 @@
 // ============================================================
 
 // ⚙️ Troque pelo número real
-const WHATSAPP_NUMBER = '5511999999999'
+const WHATSAPP_NUMBER = '+554396927336'
 
 const steps = [
   {

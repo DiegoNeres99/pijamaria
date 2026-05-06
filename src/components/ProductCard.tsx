@@ -7,7 +7,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Product } from '../data/products'
 
-const WHATSAPP_NUMBER = '5511999999999' // ⚙️ Número real aqui
+const WHATSAPP_NUMBER = '+554396927336' // ⚙️ Número real aqui
 
 interface ProductCardProps {
   product: Product

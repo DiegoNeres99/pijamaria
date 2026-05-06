@@ -4,7 +4,7 @@
 // ============================================================
 
 // ⚙️ Configuração de contato
-const WHATSAPP_NUMBER = '5511999999999'
+const WHATSAPP_NUMBER = '+554396927336'
 const INSTAGRAM_URL = 'https://www.instagram.com/usepijamaria_'
 
 const navLinks = [

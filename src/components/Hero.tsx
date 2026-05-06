@@ -6,7 +6,7 @@
 // ⚙️ Imagem do hero — substitua pela foto principal da marca
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1631194758628-71ec7c35137e?w=1600&q=90'
 
-const WHATSAPP_NUMBER = '5511999999999' // mesmo número do Header
+const WHATSAPP_NUMBER = '+554396927336' // mesmo número do Header
 
 export default function Hero() {
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá!%20Quero%20ver%20o%20catálogo%20da%20Use%20Pijamaria.`
