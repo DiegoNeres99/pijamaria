@@ -157,6 +157,9 @@ export const products: Product[] = [
     description: 'Shortão estampado com blusa básica. Conforto máximo para o verão.',
     category: 'Verão',
     image: '/galerias/verao/curto3_G.JPG',
+    images: ['/galerias/verao/curto3_G.JPG',
+              '/galerias/verao/IMG_1581.JPG',
+             '/galerias/verao/IMG_1588.JPG'],
   },
   {
     id: 10,
@@ -172,6 +175,8 @@ export const products: Product[] = [
     description: 'Regata alça fina com short básico. A dupla perfeita para o calor.',
     category: 'Verão',
     image: '/galerias/verao/curto4_G.JPG',
+    images: ['/galerias/verao/curto4_G.JPG',             
+              '/galerias/verao/IMG_1583.JPG'],
   },
   {
     id: 11,
@@ -187,6 +192,9 @@ export const products: Product[] = [
     description: 'Tecido viscose premium, lisinho e muito macio na pele.',
     category: 'Verão',
     image: '/galerias/verao/curto5_G.JPG',
+    images: ['/galerias/verao/curto5_G.JPG',
+              '/galerias/verao/IMG_1532.JPG',
+              '/galerias/verao/IMG_1584.JPG',]
   },
   // ── TAMANHOS UNICO ─────────────────────────────────────────────
   // {
@@ -233,6 +241,9 @@ export const products: Product[] = [
     description: 'Camisola com detalhes em renda. Peça leve, feminina e sofisticada.',
     category: 'Verão',
     image: '/galerias/tamanho_unico/tamanho_unico3.jpg',
+    images: ['/galerias/tamanho_unico/tamanho_unico3.jpg',
+              '/galerias/tamanho_unico/IMG_8998.jpg',
+              '/galerias/tamanho_unico/IMG_8908.PNG',]
   },
   {
     id: 15,
@@ -329,6 +340,14 @@ export const galleryImages: string[] = [
   '/galerias/inverno/longo3_G.JPG',
   '/galerias/inverno/longo4_G.JPG',
   '/galerias/inverno/longo5_M.JPG',
+  '/galerias/inverno/longo1-1_G.JPG',
+  '/galerias/inverno/longo1-1-1_G.JPG',
+  '/galerias/inverno/longo2-2_G.JPG',
+  '/galerias/inverno/longo2-2-2_G.JPG',
+  '/galerias/inverno/longo3-3_G.JPG',
+  '/galerias/inverno/longo3-3-3_G.JPG',
+  '/galerias/inverno/longo4-4_G.JPG',
+  '/galerias/inverno/longo4-4-4_G.JPG',
   // Verão
   '/galerias/verao/curto1_G.JPG',
   '/galerias/verao/curto2_G.JPG',
