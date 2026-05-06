@@ -127,6 +127,8 @@ export const products: Product[] = [
     description: 'Shortinho e camiseta florida, super fresquinha para noites quentes.',
     category: 'Verão',
     image: '/galerias/verao/curto1_G.JPG',
+    images: ['/galerias/verao/curto1_G.JPG',
+              '/galerias/verao/curto7.jpg'],
   },
   {
     id: 8,
@@ -141,7 +143,7 @@ export const products: Product[] = [
     sizes: ['G'],
     description: 'Baby doll com detalhe de laço. Leve, delicado e feminino.',
     category: 'Verão',
-    image: '/galerias/verao/curto2_G.JPG',
+    image: '/galerias/verao/curto2_G.JPG',    
   },
   {
     id: 9,
@@ -226,6 +228,8 @@ export const products: Product[] = [
     description: 'Conjunto leve e confortável para noites tranquilas. Estampa floral delicada.',
     category: 'Verão',
     image: '/galerias/tamanho_unico/tamanho_unico2.JPG',
+    images: ['/galerias/tamanho_unico/tamanho_unico2.JPG',
+              '/galerias/verao/curto6.jpg',]
   },
   {
     id: 14,
@@ -242,8 +246,7 @@ export const products: Product[] = [
     category: 'Verão',
     image: '/galerias/tamanho_unico/tamanho_unico3.jpg',
     images: ['/galerias/tamanho_unico/tamanho_unico3.jpg',
-              '/galerias/tamanho_unico/IMG_8998.jpg',
-              '/galerias/tamanho_unico/IMG_8908.PNG',]
+              '/galerias/tamanho_unico/IMG_8998.jpg',]
   },
   {
     id: 15,
@@ -259,6 +262,8 @@ export const products: Product[] = [
     description: 'Conjunto rosê com calça e blusa combinando. Delicado e elegante.',
     category: 'Verão',
     image: '/galerias/tamanho_unico/tamanho_unico4.jpg',
+    images: ['/galerias/tamanho_unico/tamanho_unico4.jpg',
+              '/galerias/verao/curto8.jpg',]
   },
   
 ]
@@ -354,6 +359,14 @@ export const galleryImages: string[] = [
   '/galerias/verao/curto3_G.JPG',
   '/galerias/verao/curto4_G.JPG',
   '/galerias/verao/curto5_G.JPG',
+  '/galerias/verao/IMG_1581.JPG',
+  '/galerias/verao/IMG_1588.JPG',
+  '/galerias/verao/IMG_1583.JPG',
+  '/galerias/verao/IMG_1532.JPG',
+  '/galerias/verao/IMG_1584.JPG',
+  '/galerias/verao/curto6.jpg',
+  '/galerias/verao/curto7.jpg',
+  '/galerias/verao/curto8.jpg',
   // Feminino / Tamanho Único
   '/galerias/tamanho_unico/tamanho_unico1.JPG',
   '/galerias/tamanho_unico/tamanho_unico2.JPG',
