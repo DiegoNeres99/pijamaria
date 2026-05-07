@@ -115,7 +115,7 @@ export const products: Product[] = [
   // ── VERÃO ────────────────────────────────────────────────
   {
     id: 7,
-    name: 'Pijama Curto Floral Verão',
+    name: 'Pijama Americano Curto Rosinha',
     price: 'R$ 99,99',
     originalPrice: 'R$ 129,99',
     discount: 23.09,
@@ -269,13 +269,13 @@ export const products: Product[] = [
   {
     id: 16,
     name: 'Pijama Americano Azulzinho Básico',
-    price: 'R$ 74,99',
-    originalPrice: 'R$ 89,99',
-    discount: 16.69,
+    price: 'R$ 99,99',
+    originalPrice: 'R$ 129,99',
+    discount: 23.09,
     rating: 5,
     reviews: 103,
     pixLabel: 'no PIX',
-    installments: '2x de R$ 37,45 no cartão s/ juros',
+    installments: '2x de R$ 49,95 no cartão s/ juros',
     sizes: ['Tamanho Único','38 a 44'],
     description: 'Conjunto azulzinho básico. Delicado e elegante.',
     category: 'Verão',
