@@ -87,7 +87,7 @@ export default function Footer() {
               <p className="text-xs text-rose-400/70 tracking-[0.25em] uppercase mt-0.5">conforto &amp; delicadeza</p>
             </div>
             <p className="text-stone-500 text-sm leading-relaxed max-w-xs">
-              Pijamas artesanais e selecionados com amor, para quem merece o melhor nos momentos de descanso. Qualidade, conforto e feminilidade em cada peça.
+              Pijamas selecionados com amor, para quem merece o melhor nos momentos de descanso. Qualidade, conforto e feminilidade em cada peça.
             </p>
             {/* Ícones sociais */}
             <div className="flex gap-3 mt-6">

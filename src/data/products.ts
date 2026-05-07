@@ -246,7 +246,8 @@ export const products: Product[] = [
     category: 'Verão',
     image: '/galerias/tamanho_unico/tamanho_unico3.jpg',
     images: ['/galerias/tamanho_unico/tamanho_unico3.jpg',
-              '/galerias/tamanho_unico/IMG_8998.jpg',]
+              '/galerias/tamanho_unico/IMG_8998.jpg',
+              '/galerias/tamanho_unico/curto12.jpg',]
   },
   {
     id: 15,
@@ -259,13 +260,28 @@ export const products: Product[] = [
     pixLabel: 'no PIX',
     installments: '2x de R$ 37,45 no cartão s/ juros',
     sizes: ['Tamanho Único','38 a 44'],
-    description: 'Conjunto rosê com calça e blusa combinando. Delicado e elegante.',
+    description: 'Conjunto rosê com shorts e blusa combinando. Delicado e elegante.',
     category: 'Verão',
     image: '/galerias/tamanho_unico/tamanho_unico4.jpg',
     images: ['/galerias/tamanho_unico/tamanho_unico4.jpg',
               '/galerias/verao/curto8.jpg',]
   },
-  
+  {
+    id: 16,
+    name: 'Pijama Americano Azulzinho Básico',
+    price: 'R$ 74,99',
+    originalPrice: 'R$ 89,99',
+    discount: 16.69,
+    rating: 5,
+    reviews: 103,
+    pixLabel: 'no PIX',
+    installments: '2x de R$ 37,45 no cartão s/ juros',
+    sizes: ['Tamanho Único','38 a 44'],
+    description: 'Conjunto azulzinho básico. Delicado e elegante.',
+    category: 'Verão',
+    image: '/galerias/tamanho_unico/curto13.jpg',
+    images: ['/galerias/tamanho_unico/curto13.jpg',]
+  },
 ]
 
 // ============================================================
