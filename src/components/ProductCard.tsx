@@ -106,7 +106,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Imagem / Carrossel */}
       <div className="relative overflow-hidden aspect-[3/4]">
-        {/* Faixa diagonal ESGOTADO */}
+        {/* Faixa diagonal ESGOTADO
         {product.outOfStock && (
           <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
             <div className="absolute -rotate-45 bg-red-600 text-white font-bold text-2xl px-12 py-2 shadow-lg" style={{ width: '150%', transform: 'translateY(-25%) rotate(-45deg)' }}>
@@ -114,7 +114,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
             <div className="absolute inset-0 bg-black/10" />
           </div>
-        )}
+        )} */}
         <img
           src={photos[current]}
           alt={`${product.name} - foto ${current + 1}`}

@@ -88,14 +88,14 @@ export const products: Product[] = [
     reviews: 241,
     pixLabel: 'no PIX',
     installments: '2x de R$ 64,95 no cartão s/ juros',
-    sizes: ['M','G'],
+    sizes: ['G'],
     description: 'Calça oncinha com blusa preta estampada. O clássico que nunca sai de moda.',
     category: 'Inverno',
     image: '/galerias/inverno/longo4_G.JPG',
     images: ['/galerias/inverno/longo4_G.JPG',
              '/galerias/inverno/longo4-4_G.JPG',
              '/galerias/inverno/longo4-4-4_G.JPG'
-            ],
+            ],  
   },
    {
     id: 5,
@@ -283,7 +283,6 @@ export const products: Product[] = [
     category: 'Verão',
     image: '/galerias/tamanho_unico/curto13.jpg',
     images: ['/galerias/tamanho_unico/curto13.jpg',],
-    outOfStock: true,
   },
 ]
 
