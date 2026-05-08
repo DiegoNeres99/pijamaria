@@ -106,6 +106,15 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Imagem / Carrossel */}
       <div className="relative overflow-hidden aspect-[3/4]">
+        {/* Faixa diagonal ESGOTADO */}
+        {product.outOfStock && (
+          <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+            <div className="absolute -rotate-45 bg-red-600 text-white font-bold text-2xl px-12 py-2 shadow-lg" style={{ width: '150%', transform: 'translateY(-25%) rotate(-45deg)' }}>
+              ESGOTADO
+            </div>
+            <div className="absolute inset-0 bg-black/10" />
+          </div>
+        )}
         <img
           src={photos[current]}
           alt={`${product.name} - foto ${current + 1}`}
@@ -157,15 +166,17 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
 
         {/* Botão WhatsApp flutuante na imagem (aparece no hover desktop) */}
-        <a
-          href={whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Comprar ${product.name} via WhatsApp`}
-          className="absolute bottom-3 right-3 flex items-center justify-center w-10 h-10 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0"
-        >
-          <WhatsAppIcon size={20} />
-        </a>
+        {!product.outOfStock && (
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Comprar ${product.name} via WhatsApp`}
+            className="absolute bottom-3 right-3 flex items-center justify-center w-10 h-10 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0"
+          >
+            <WhatsAppIcon size={20} />
+          </a>
+        )}
       </div>
 
       {/* Conteúdo */}
@@ -213,15 +224,21 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Botão WhatsApp principal */}
-        <a
-          href={whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-2 flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-semibold text-sm py-2.5 rounded-xl transition-colors shadow-sm"
-        >
-          <WhatsAppIcon size={17} />
-          Quero comprar
-        </a>
+        {!product.outOfStock ? (
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-semibold text-sm py-2.5 rounded-xl transition-colors shadow-sm"
+          >
+            <WhatsAppIcon size={17} />
+            Quero comprar
+          </a>
+        ) : (
+          <div className="mt-2 flex items-center justify-center w-full bg-gray-400 text-white font-semibold text-sm py-2.5 rounded-xl cursor-not-allowed">
+            Produto Esgotado
+          </div>
+        )}
       </div>
     </div>
     </div>

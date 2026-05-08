@@ -13,6 +13,7 @@ export interface Product {
   category: string
   image: string           // foto principal
   images?: string[]       // fotos extras (carrossel) — se informado, substitui 'image'
+  outOfStock?: boolean    // marca se o produto está esgotado
 }
 
 export const products: Product[] = [
@@ -196,7 +197,8 @@ export const products: Product[] = [
     image: '/galerias/verao/curto5_G.JPG',
     images: ['/galerias/verao/curto5_G.JPG',
               '/galerias/verao/IMG_1532.JPG',
-              '/galerias/verao/IMG_1584.JPG',]
+              '/galerias/verao/IMG_1584.JPG',],
+    outOfStock: true,
   },
   // ── TAMANHOS UNICO ─────────────────────────────────────────────
   // {
@@ -280,7 +282,8 @@ export const products: Product[] = [
     description: 'Conjunto azulzinho básico. Delicado e elegante.',
     category: 'Verão',
     image: '/galerias/tamanho_unico/curto13.jpg',
-    images: ['/galerias/tamanho_unico/curto13.jpg',]
+    images: ['/galerias/tamanho_unico/curto13.jpg',],
+    outOfStock: true,
   },
 ]
 
