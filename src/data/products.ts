@@ -50,7 +50,7 @@ export const products: Product[] = [
     reviews: 29,
     pixLabel: 'no PIX',
     installments: '2x de R$ 64,95 no cartão s/ juros',
-    sizes: ['M','G'],
+    sizes: ['M'],
     description: 'Abertura com botões, estampa animal print moderna. Conjunto calça e blusa.',
     category: 'Inverno',
     image: '/galerias/inverno/longo2_G.JPG',
@@ -96,6 +96,7 @@ export const products: Product[] = [
              '/galerias/inverno/longo4-4_G.JPG',
              '/galerias/inverno/longo4-4-4_G.JPG'
             ],  
+    outOfStock: true,
   },
    {
     id: 5,
